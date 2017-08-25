@@ -1,13 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-</head>
-<body>
-    {{ 2 + 2 }}
-</body>
+<html lang="en" ng-app="myApp">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="bower_components\angular\angular.js"></script>
+
+        <!-- bootstrap module -->
+        <script src="js\app.js"></script>
+        
+        <!-- controladores module -->
+        <script src="js\controladores\controladores.module.js"></script>
+        <script src="js\controladores\myctrl.controller.js"></script>
+        <script src="js\controladores\mysecondctrl.controller.js"></script>
+        
+        <!-- servicios module -->
+        <script src="js\servicios\servicios.module.js"></script>
+        <script src="js\servicios\myService.js"></script> 
+         
+    </head>
+    <body>
+       <div ng-controller="myController as myCtrl">
+           <h1>Controlador 1</h1>
+           <div ng-repeat="foo in myCtrl.msg">
+                {{ foo.name }}
+                <button ng-click="myCtrl.borrar(foo)">Borrar</button>
+           </div> 
+       </div>
+       <div ng-controller="mySecondCtrl as secondCtrl">
+            <h1>Controlador 2</h1>
+            <div ng-repeat="bar in secondCtrl.msg">
+                {{ bar.name }}
+            </div> 
+       </div>
+    </body>
 </html>

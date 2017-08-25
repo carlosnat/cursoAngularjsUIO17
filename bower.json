@@ -1,0 +1,17 @@
+{
+  "name": "cursoAngular",
+  "authors": [
+    "carlosnat <nateracarlos@gmail.com>"
+  ],
+  "description": "curso",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
