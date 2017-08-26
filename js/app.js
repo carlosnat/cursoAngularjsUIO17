@@ -4,7 +4,13 @@
     angular
         .module('myApp', [
             'controladores',
-            'servicios'
-        ]);
+            'servicios',
+            'providers',
+            'constantes'
+        ])
+        .config(function(myProviderProvider, USUARIOS){
+            console.log('provider', myProviderProvider);
+             myProviderProvider.setUsersApp(USUARIOS);
+        })
 
 }());

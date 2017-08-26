@@ -17,22 +17,24 @@
         
         <!-- servicios module -->
         <script src="js\servicios\servicios.module.js"></script>
-        <script src="js\servicios\myService.js"></script> 
+        <script src="js\servicios\myService.js"></script>
+
+        <!-- provider module -->
+        <script src="js\providers\provider.module.js"></script>
+        <script src="js\providers\myProvider.provider.js"></script>
+
+        <!-- constant module -->
+        <script src="js\constantes\constantes.module.js"></script>
+        <script src="js\constantes\myConstant.constant.js"></script>
          
     </head>
     <body>
        <div ng-controller="myController as myCtrl">
            <h1>Controlador 1</h1>
-           <div ng-repeat="foo in myCtrl.msg">
-                {{ foo.name }}
-                <button ng-click="myCtrl.borrar(foo)">Borrar</button>
+           <div ng-repeat="user in myCtrl.usuarios">
+                {{ user.name }}
+                <button ng-click="myCtrl.borrar(user)">Borrar</button>
            </div> 
-       </div>
-       <div ng-controller="mySecondCtrl as secondCtrl">
-            <h1>Controlador 2</h1>
-            <div ng-repeat="bar in secondCtrl.msg">
-                {{ bar.name }}
-            </div> 
        </div>
     </body>
 </html>

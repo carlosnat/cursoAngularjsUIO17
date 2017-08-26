@@ -14,7 +14,7 @@
         init();
 
         function init(){
-            myCtrl.msg = myService.msg;
+            myCtrl.usuarios = myService.usuarios;
         }
 
         function borrar(obj){

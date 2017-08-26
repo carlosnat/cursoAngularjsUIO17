@@ -5,23 +5,23 @@
         .module('servicios')
         .factory('myService', myService)
 
+        myService.$inject = ['myProvider'];
     /** @ngInject */
-    function myService(){
+    function myService(myProvider){
 
-        var refresco = [
-            {id:2 , name:'carlos'},
-            {id:3 , name:'pepe'}
-        ];
+        console.log('providerInService', myProvider);
+
+        var usuarios = myProvider.usersApp;
 
         function remove(obj){
             console.log(obj);
-            var indice = refresco.indexOf(obj);
-            refresco.splice(indice, 1);
-            console.log('refresco', refresco);
+            var indice = usuarios.indexOf(obj);
+            usuarios.splice(indice, 1);
+            console.log('usuarios', usuarios);
         }
 
         return {
-            msg: refresco,
+            usuarios: usuarios,
             remove: remove
         }
 
