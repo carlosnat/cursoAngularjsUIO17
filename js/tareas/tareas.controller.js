@@ -23,7 +23,13 @@
         }
 
         function crearNueva(){
-            var data = {id:tareas.allTask.length, descripcion: tareas.nueva, check:false};
+            
+            var data = {
+                id:tareas.allTask.length, 
+                descripcion: tareas.nueva, 
+                check:false
+            };
+
             tareaService.create(data);
             tareas.nueva = '';
         }
@@ -44,7 +50,12 @@
 
         function aceptarEdicion(){
             tareas.taskSelected.descripcion = tareas.nueva;
-            var data = {id: tareas.taskSelected.id, descripcion:tareas.taskSelected.descripcion};
+            
+            var data = {
+                id: tareas.taskSelected.id, 
+                descripcion:tareas.taskSelected.descripcion
+            };
+            
             tareaService.update(tareas.taskSelected.indice, data);
             cancelarEdicion();
         }
