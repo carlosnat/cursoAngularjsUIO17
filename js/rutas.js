@@ -10,11 +10,16 @@
         function myConfig($routeProvider){
             $routeProvider
             .when('/', {
-                template: '<h2>Hola clase</h2>'
+                templateUrl: 'js/primer/primer.html',
+                controller:'primerController',
+                controllerAs:'primer'
             })
             .when('/segundo', {
-                template: '<h2>Hola mundo</h2>'
-            });
+                templateUrl: 'js/segundo/segundo.html',
+                controller: 'segundoController',
+                controllerAs: 'segundo'
+            })
+            .otherwise('/');
         }
 
 
