@@ -14,7 +14,7 @@
                 controller:'primerController',
                 controllerAs:'primer'
             })
-            .when('/segundo', {
+            .when('/segundo/:parametro', {
                 templateUrl: 'js/segundo/segundo.html',
                 controller: 'segundoController',
                 controllerAs: 'segundo'

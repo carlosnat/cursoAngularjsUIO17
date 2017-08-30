@@ -5,11 +5,14 @@
         .module('myApp')
         .controller('segundoController', segundoController)
 
+        segundoController.$inject = ['$routeParams'];
     /** @ngInject */
-    function segundoController(){
+    function segundoController($routeParams){
         var segundo = this;
 
-        segundo.msg = "Hola segundo controlador";
+        console.log('parametros', $routeParams);
+
+        segundo.msg = "Hola segundo controlador => " + $routeParams.parametro;
         
         init();
 
