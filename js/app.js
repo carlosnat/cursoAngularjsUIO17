@@ -2,5 +2,9 @@
     'use strict';
 
     angular
-        .module('myApp', ['ngRoute']);
+        .module('myApp', [
+            'ngRoute',
+            'primer',
+            'segundo'
+        ]);
 }());

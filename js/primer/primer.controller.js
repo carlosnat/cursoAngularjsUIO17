@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('myApp')
+        .module('primer')
         .controller('primerController', primerController)
 
     /** @ngInject */

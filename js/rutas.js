@@ -8,19 +8,7 @@
         myConfig.$inject = ['$routeProvider'];
 
         function myConfig($routeProvider){
-            $routeProvider
-            .when('/', {
-                templateUrl: 'js/primer/primer.html',
-                controller:'primerController',
-                controllerAs:'primer'
-            })
-            .when('/segundo/:parametro', {
-                templateUrl: 'js/segundo/segundo.html',
-                controller: 'segundoController',
-                controllerAs: 'segundo'
-            })
-            .otherwise('/');
+            $routeProvider.otherwise('/');
         }
-
-
+        
 }());
