@@ -9,18 +9,24 @@
             $scope.msg = 'hola mundo';
 
             primer_paso();
-            segundo_paso();
-            tercer_paso();
 
-
+            segundo_paso().then(function(){
+                tercer_paso();
+            });
+            
             function primer_paso(){
                 console.log('primer paso');
             }
 
             function segundo_paso(){
-                $timeout(function(){
-                    console.log('segundo paso');                
-                }, 2500);
+                var promesa = new Promise(function(resolve, reject){
+                    $timeout(function(){
+                        console.log('segundo paso');  
+                        resolve();              
+                    }, 2500);
+                });
+                return promesa;
+                
 
             }
 
