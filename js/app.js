@@ -26,8 +26,6 @@
                     }, 2500);
                 });
                 return promesa;
-                
-
             }
 
             function tercer_paso(){
