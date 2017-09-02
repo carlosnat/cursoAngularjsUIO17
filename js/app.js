@@ -21,7 +21,7 @@
                 console.log(msg);
             })*/
 
-            /*segundo_paso().then(
+            segundo_paso().then(
                 function(succ){
                     console.log('promse succ', succ);
                 },
@@ -31,7 +31,7 @@
                 function(final){
                     console.log('finally', final);
                 }
-            );*/
+            );
 
             
             
@@ -43,9 +43,10 @@
 
                 var promesa = $q.defer();
                 
-                promesa.notify('promesa calculando numero');
+                
 
                 $timeout(function(){
+                    promesa.notify('promesa calculando numero');
                     console.log('segundo paso');
                     var numero = obtener_numero_random();
                     console.log('numero', numero);
