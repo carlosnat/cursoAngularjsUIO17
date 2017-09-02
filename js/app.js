@@ -10,8 +10,8 @@
 
             primer_paso();
 
-            segundo_paso().then(function(){
-                tercer_paso();
+            segundo_paso().then(function(res){
+                tercer_paso(res);
             });
             
             function primer_paso(){
@@ -22,14 +22,14 @@
                 var promesa = new Promise(function(resolve, reject){
                     $timeout(function(){
                         console.log('segundo paso');  
-                        resolve();              
+                        resolve('ejecutado con exito');              
                     }, 2500);
                 });
                 return promesa;
             }
 
-            function tercer_paso(){
-                console.log('tercer paso');
+            function tercer_paso(res){
+                console.log('tercer paso ' + res);
             }
 
         });
