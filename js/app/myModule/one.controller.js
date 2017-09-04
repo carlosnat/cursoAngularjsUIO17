@@ -20,7 +20,8 @@
             });
 
             //crear un nuevo post
-            oneService.newPost().then(function(res){
+            one.data = {name:'carlos'};
+            oneService.newPost(one.data).then(function(res){
                 console.log('respuesta crear un post', res);
             });
 

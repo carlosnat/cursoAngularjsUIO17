@@ -5,11 +5,11 @@
         .module('oneModule')
         .factory('oneService', oneService)
 
-        oneService.$inject = ['$http'];
+        oneService.$inject = ['$http', 'API_URL'];
     /** @ngInject */
-    function oneService($http){
+    function oneService($http, API_URL){
 
-        //console.log('$http', $http);
+        var base_url = API_URL;
 
         return {
             getPosts: getPosts,
@@ -17,26 +17,13 @@
         }
 
         function getPosts(){
-            var promise = $http({
-                method:'GET',
-                url:'https://jsonplaceholder.typicode.com/posts'
-            })
-            .then(function(respuesta){
-                console.log('toda la respuesta', respuesta);
-                console.log('respuesta data', respuesta.data);
-                console.log('respuesta status', respuesta.status);
-                return respuesta;
-            });
-
-            return promise;
+            var url = base_url + 'posts';
+            return $http.get(url);
         }
 
-        function newPost(){
-            return $http({
-                method:'POST',
-                url:'https://jsonplaceholder.typicode.com/posts',
-                data:{name:'carlos'}
-            });
+        function newPost(data){
+            var url = base_url + 'posts';
+            return $http.post(url, data);
         }
 
     }
