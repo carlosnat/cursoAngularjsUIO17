@@ -14,6 +14,17 @@
         init();
 
         function init(){
+            // obtener todos los posts
+            oneService.getPosts().then(function(res){
+                console.log('respuesta en el Controlador', res);
+            });
+
+            //crear un nuevo post
+            oneService.newPost().then(function(res){
+                console.log('respuesta crear un post', res);
+            });
+
+
         }
 
     }

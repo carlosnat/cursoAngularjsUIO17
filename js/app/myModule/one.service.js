@@ -9,15 +9,36 @@
     /** @ngInject */
     function oneService($http){
 
-        console.log('$http', $http);
+        //console.log('$http', $http);
 
         return {
-            fn: fn
+            getPosts: getPosts,
+            newPost: newPost
         }
 
-        function fn(){
-            
+        function getPosts(){
+            var promise = $http({
+                method:'GET',
+                url:'https://jsonplaceholder.typicode.com/posts'
+            })
+            .then(function(respuesta){
+                console.log('toda la respuesta', respuesta);
+                console.log('respuesta data', respuesta.data);
+                console.log('respuesta status', respuesta.status);
+                return respuesta;
+            });
+
+            return promise;
         }
+
+        function newPost(){
+            return $http({
+                method:'POST',
+                url:'https://jsonplaceholder.typicode.com/posts',
+                data:{name:'carlos'}
+            });
+        }
+
     }
 
 }());
