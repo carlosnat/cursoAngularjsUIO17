@@ -5,25 +5,22 @@
         .module('oneModule')
         .factory('oneService', oneService)
 
-        oneService.$inject = ['$http', 'API_URL'];
+        oneService.$inject = ['$http', 'API'];
     /** @ngInject */
-    function oneService($http, API_URL){
+    function oneService($http, API){
 
-        var base_url = API_URL;
+        var base_url = API.url;
 
         return {
-            getPosts: getPosts,
-            newPost: newPost
+            getWeather: getWeather
         }
 
-        function getPosts(){
-            var url = base_url + 'posts';
-            return $http.get(url);
-        }
-
-        function newPost(data){
-            var url = base_url + 'posts';
-            return $http.post(url, data);
+        function getWeather(){
+            var url = base_url + 'discover/movie';
+            var config = {
+                params: {api_key: API.key}
+            };
+            return $http.get(url, config);
         }
 
     }

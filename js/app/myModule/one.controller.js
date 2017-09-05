@@ -15,15 +15,15 @@
 
         function init(){
             // obtener todos los posts
-            oneService.getPosts().then(function(res){
+            oneService.getWeather().then(function(res){
                 console.log('respuesta en el Controlador', res);
             });
 
             //crear un nuevo post
-            one.data = {name:'carlos'};
+            /*one.data = {name:'carlos'};
             oneService.newPost(one.data).then(function(res){
                 console.log('respuesta crear un post', res);
-            });
+            });*/
 
 
         }

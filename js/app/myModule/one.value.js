@@ -3,8 +3,12 @@
 
     angular
         .module('oneModule')
-        .constant('API_URL', 
-            'https://jsonplaceholder.typicode.com/'
+        .constant('API',
+        {
+            URL:'https://api.themoviedb.org/3/',
+            KEY: '49421463b3e51d8123484c884de009e3'
+        } 
+            
     );
 
 }());
