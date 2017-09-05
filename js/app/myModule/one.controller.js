@@ -21,6 +21,7 @@
 
             //crear un nuevo post
             one.data = {name:'carlos'};
+            
             oneService.newPost(one.data).then(function(res){
                 console.log('respuesta crear un post', res);
             });

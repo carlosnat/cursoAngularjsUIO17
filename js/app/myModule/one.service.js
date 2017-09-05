@@ -17,12 +17,12 @@
         }
 
         function getPosts(){
-            var url = base_url + 'posts';
+            var url = base_url + 'comments';
             return $http.get(url);
         }
 
         function newPost(data){
-            var url = base_url + 'posts';
+            var url = base_url + 'comments';
             return $http.post(url, data);
         }
 
