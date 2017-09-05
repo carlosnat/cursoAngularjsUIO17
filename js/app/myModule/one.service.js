@@ -25,6 +25,7 @@
                 console.log('toda la respuesta', respuesta);
                 console.log('respuesta data', respuesta.data);
                 console.log('respuesta status', respuesta.status);
+                //return modelUser.armarUrlavatar(respuesta.data);
                 return respuesta;
             });
 
