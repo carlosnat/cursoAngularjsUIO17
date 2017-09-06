@@ -32,8 +32,12 @@
         ng-model-options="{updateOn:'blur'}"
         >
 
-        <p ng-show="myform.$invalid && myform.$dirty">
+        <p ng-show="myform.myInput.$error.minlength && myform.$dirty">
             deben ser minimo 3 caracteres
+        </p>
+
+        <p ng-show="myform.myInput.$error.maxlength && myform.$dirty">
+            deben tener maximo 10 caracteres
         </p>
 
 
