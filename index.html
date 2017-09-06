@@ -1,13 +1,46 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="">
+<html lang="en" ng-app="myApp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="bower_components\angular\angular.js"></script>
+    <script src="js/app/app.js"></script>
+    <script src="js/app/mycontroller.controller.js"></script>
 </head>
-<body>
-    {{ 2 + 2 }}
+<body ng-controller="mycontroller as ctrl">
+    <form name="myform">
+        <input ng-model="nombre" type="text" name="myInput" 
+        ng-required="true"
+        ng-minlength="3"
+        ng-maxlength="10"
+        >
+        <input type="submit" value="Enviar">
+    </form>
+
+    <pre>{{ myform  | json}}</pre>
+    <!-- div>
+        <div>
+            Validado: {{ myform.$valid}}
+        </div>
+        <div>
+            Invalidado: {{ myform.$invalid}}
+        </div>
+        <div>
+            Dirty (HAN interactuado con el formulario): {{ myform.$dirty}}
+        </div>
+        <div>
+            Pristine (NO han interactuado con el formulario) {{ myform.$pristine}}
+        </div>
+    </div -->
+
+    <!-- div>
+        <pre>{{ myform.$error | json }}</pre>
+    </div -->
+    
+
+    
+    
 </body>
 </html>
