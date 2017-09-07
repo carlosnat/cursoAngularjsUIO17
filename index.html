@@ -40,6 +40,11 @@
         <input type="submit" value="Enviar">
     </form>
 
+    <div>
+        Valido: <pre>{{ myform.$valid | json }}</pre>
+        Invalido: <pre>{{ myform.$invalid | json }}</pre>
+    </div>
+
 
     <!-- div>
         <div>
@@ -56,10 +61,7 @@
         </div>
     </div -->
 
-    <div>
-        Valido: <pre>{{ myform.$valid | json }}</pre>
-        Invalido: <pre>{{ myform.$invalid | json }}</pre>
-    </div>
+   
     
 </body>
 </html>
