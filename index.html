@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="">
+<html lang="en" ng-app="myApp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +8,17 @@
     <script src="bower_components\angular\angular.js"></script>
 </head>
 <body>
-    {{ 2 + 2 }}
+    
+    <book></book>
+
+    <script src="app.js"></script>
+    <script src="book\book.module.js"></script>
+    <script src="book\bookDetails\book.directive.js"></script>
+    <!-- incluir el archivo js de las directivas -->
+    <script src="book\bookDetails\directives\infoBook\infoBook.directive.js"></script>
+    <script src="book\bookDetails\directives\infoAutor\infoAutor.directive.js"></script>
+    <script src="book\formPedido\formPedido.directive.js"></script>
+    <script src=""></script>
+
 </body>
 </html>
